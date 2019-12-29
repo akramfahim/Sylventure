@@ -13,6 +13,27 @@ body {
     padding:0px !important;
 }
 
+.SectionHeader{
+    font-size: 38px;
+    font-weight: 500;
+    color: #F57A39;
+    position: relative; 
+}
+.SectionHeader::after {
+    position: absolute;
+    left: 45%;
+    bottom: -5px;
+    width: 10%;
+    height: 4px;
+    background-color: #F57A39;
+    content: "";
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+
 
 /* ================================= header-background =======================================================*/
 
