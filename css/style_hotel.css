@@ -268,7 +268,7 @@ mark,
 #fh5co-services-section,
 #fh5co-contact-section,
 #footer {
-  padding: 7em 0;
+  padding: 3em 0;
 }
 
 #hotel-facilities {
@@ -321,8 +321,8 @@ mark,
   bottom: -47px;
   right: 0;
   color: #F57A39;
-  font-size: 25px;
-  width: 120px;
+  font-size: 22px;
+  width: 150px;
   padding: 7px 0;
   background: #3c4146;
   -webkit-transition: 0.5s;
@@ -348,8 +348,9 @@ mark,
   }
 }
 #fh5co-hotel-section .hotel-content .desc h3 {
-  font-size: 20px;
-  margin: 0 0 20px 0;
+  font-size: 30px;
+    margin: 0 0 20px 0;
+    color: #F57A39;
 }
 #fh5co-hotel-section .hotel-content .desc h3 a {
   color: rgba(0, 0, 0, 0.7);
