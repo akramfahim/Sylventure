@@ -598,36 +598,40 @@ textarea.form-control {
 /* ===========================   Tour Sight Page Style End ===========================================================*/
 
 /* ===========================   Hotels Page Style Start ===========================================================*/
-#hotel-parallax{
-    /* The image used */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/header.jpg");
+a.pageLinker{
+  color: #F57A39;
+  font-weight: bold;
+  position: relative;
+  text-decoration: none;
+}
 
-  /* Set a specific height */
-    min-height: 500px;
+a.pageLinker::after {
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 3px;
+    background-color: #F57A39;
+    content: "";
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+a.pageLinker:hover{
+  color: #CC784B;
+}
 
-  /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+a.pageLinker:hover::after {
+    width: 100%;
 }
-.hotel-header{
-    color: #FFF;
-    width: 70%;
-    margin: 0px auto;
-    padding-top: 200px;
-}
-.hotel-header h1{
-    font-weight: bold;
-}
-.hotel-header h3{
-    font-weight: bold;
-}
+
+
 /* ===========================   Hotels Page Style End ===========================================================*/
 /* ===========================   Hotels Page Style Responsive ===========================================================*/
 
 
-@media only screen and (max-width: 998px) {
+/*@media only screen and (max-width: 998px) {
     .hotel-header h1 {
         font-size: 140%;
     }
@@ -648,5 +652,5 @@ textarea.form-control {
 @media only screen and (max-width: 480px) {
     
 }
-
+*/
 /* ===========================   Hotels Page Style Responsive End ===========================================================*/
