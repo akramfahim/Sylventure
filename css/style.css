@@ -35,6 +35,8 @@ body {
 
 
 
+
+
 /* ================================= header-background =======================================================*/
 
 #header{
@@ -202,8 +204,8 @@ button:focus {
 }
 
 h2 {
-    color: #fff;
-    font-size: 180%;
+    color: #F57A39;
+    font-size: 170%;
     word-spacing: 5px;
     letter-spacing: 3px;
     margin-bottom: 20px;
