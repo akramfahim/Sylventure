@@ -1,12 +1,9 @@
 .section {
    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('../images/header.jpg');
 	background size: cover;
-
 	height: 100vh;
 	background-position: center;
-
 	position: relative;
-	height: 100vh;
 }
 
 .section .section-center {
@@ -18,13 +15,13 @@
 	transform: translateY(-50%);
 }
 
-#booking {
+/*#booking {
 	font-family: 'Raleway', sans-serif;
-}
+}*/
 
 .booking-form {
 	position: relative;
-	max-width: 642px;
+	max-width: 842px;
 	width: 100%;
 	margin: auto;
 	padding: 40px;
