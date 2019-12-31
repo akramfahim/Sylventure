@@ -48,7 +48,7 @@
   color: #777777;
   font-weight: 300;
 }
-
+/*
 body {
   color: #777777;
   font-family: "Poppins", sans-serif;
@@ -56,9 +56,9 @@ body {
   font-weight: 300;
   line-height: 1.625em;
   position: relative;
-}
+}*/
 
-ol, ul {
+/*ol, ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -86,7 +86,7 @@ iframe {
 a, a:focus, a:hover {
   text-decoration: none;
   outline: 0;
-}
+}*/
 
 .btn.active.focus,
 .btn.active:focus,
