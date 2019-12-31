@@ -32,6 +32,9 @@ body {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
 }
+.bg-colorful{
+    background-color: #F57A39;
+}
 
 
 
@@ -677,3 +680,33 @@ a.pageLinker:hover::after {
 }
 */
 /* ===========================   Hotels Page Style Responsive End ===========================================================*/
+
+/*=============================  Cars Page CSS ============================================*/
+.item-1{
+    color: #fff;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+.item-1:hover{
+    background: #F57A39;
+    box-shadow: 10px 12px 15px 0px rgba(107,36,0,0.65);
+    /*14px 15px 16px 1px rgba(107,36,0,0.65);*/
+    /*background: #fff;*/
+    /*box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);*/
+    /*font-size: 105%;*/
+    border-radius: 4px;
+    -ms-transform: scale(1.02); /* IE 9 */
+    -webkit-transform: scale(1.02); /* Safari 3-8 */
+    transform: scale(1.02); 
+}
+/*.item-1:hover h2{
+    
+    font-size: 130%;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}*/
+/*=============================  Cars Page CSS End ============================================*/
