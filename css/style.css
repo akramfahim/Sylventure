@@ -1042,4 +1042,9 @@ a.pageLinker:hover::after {
       font-size: 18px;
       font-weight: 500;
       text-transform: uppercase; }
+
+.ftco-section {
+  padding: 7em 0;
+  position: relative; 
+}
 /*=============================  MEdical Emergency Page CSS End ============================================*/
