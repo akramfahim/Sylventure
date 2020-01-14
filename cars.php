@@ -127,7 +127,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -162,7 +162,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -196,7 +196,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -230,7 +230,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -263,7 +263,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -296,7 +296,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -330,7 +330,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -365,7 +365,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -399,7 +399,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -433,7 +433,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -468,7 +468,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -503,7 +503,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -536,7 +536,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -569,7 +569,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
