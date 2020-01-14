@@ -1,3 +1,6 @@
+<?php 
+  
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,30 +175,30 @@
       </div>
       <div class="contact-section">
         <div class="container">
-          <form>
+          <form method="post" action="db/contact.php">
               <div class="row">
                 <div class="col-md-6 form-line">
                     <div class="form-group">
                         <label for="exampleInputUsername">Your name</label>
-                        <input type="text" class="form-control" id="" placeholder=" Enter Name">
+                        <input type="text" name="name" class="form-control" id="" placeholder=" Enter Name">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail">Email Address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id" >
                     </div>  
                     <div class="form-group">
                         <label for="telephone">Mobile No.</label>
-                        <input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">
+                        <input type="tel" name="phone" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no." >
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for ="description"> Message</label>
-                        <textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>
+                        <textarea  class="form-control" name="msg" id="description" placeholder="Enter Your Message"></textarea>
                     </div>
                     <div>
 
-                        <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+                        <button type="submit" name="submit" class="btn btn-default submit" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
                     </div>
                     
                 </div>
@@ -253,6 +256,35 @@
         </div>
     </section>
     <!-- ./Footer -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <?php 
+                $error_message = '';
+                if(isset($_GET['error_message'])){
+                    $error_message = $_GET['error_message'];
+                 } 
+                 if ($error_message): ?>
+                <h2 class="text-danger"><?php echo $error_message ?></h2>
+              <?php else: ?>
+                <p class="text-success">Thank You For Contacting with Us. We Will contact With You very Soon</p>
+              <?php endif ?>     
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
