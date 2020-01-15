@@ -1,3 +1,23 @@
+<?php 
+  if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    // echo $id;
+  }
+
+  $success_message = "";
+  $error_message = "";
+
+  if (isset($_GET['success_message'])) {
+
+    $success_message = $_GET['success_message'];
+  
+  } else if (isset($_GET['error_message'])) {
+    
+    $error_message = $_GET['error_message']; 
+  
+  }
+  
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,21 +103,22 @@
             <div class="form-header mt-5">
               <h1>Make your reservation</h1>
             </div>
-            <form action="connectroom.php" method="post">
+            <form action="db/room_confirm.php" method="post">
+              <input type="hidden" name="id" value="<?php echo $id; ?>">
               <div class="form-group">
-                <input class="form-control" type="text" placeholder="Please enter your name" name="names">
+                <input class="form-control" type="text" name="name" placeholder="Please enter your name" required>
                 <span class="form-label">Name</span>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" type="date" required name="datein" id="m_date">
+                    <input class="form-control" type="date" name="datein" required id="m_date" min="<?php echo date('Y-m-d'); ?>">
                     <span class="form-label">Check In</span>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" type="date" required  name="dateout" id="m_date">
+                    <input class="form-control" type="date" required  name="dateout" id="m_date" min="<?php echo date('Y-m-d'); ?>">
                     <span class="form-label">Check out</span>
                   </div>
                 </div>
@@ -107,9 +128,9 @@
                   <div class="form-group">
                     <select class="form-control" required name="rooms">
                       <option value="" selected hidden>no of rooms</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
                     </select>
                     <span class="select-arrow"></span>
                     <span class="form-label">Rooms</span>
@@ -119,10 +140,10 @@
                   <div class="form-group">
                     <select class="form-control" required name="adults">
                       <option value="" selected hidden>no of adults</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
                     </select>
                     <span class="select-arrow"></span>
                     <span class="form-label">Adults</span>
@@ -132,11 +153,11 @@
                   <div class="form-group">
                     <select class="form-control" required name="children">
                       <option value="" selected hidden>no of children</option>
-                      <option>0</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
 
                     </select>
                     <span class="select-arrow"></span>
@@ -147,19 +168,19 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" type="email" placeholder="Enter your Email" name="email">
+                    <input class="form-control" type="email" placeholder="Enter your Email" name="email" required>
                     <span class="form-label">Email</span>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" type="tel" placeholder="Enter you Phone" name="numbers">
+                    <input class="form-control" type="tel" placeholder="Enter you Phone" name="phone" required>
                     <span class="form-label">Phone</span>
                   </div>
                 </div>
               </div>
               <div class="form-btn">
-                <button class="submit-btn" data-toggle="modal" data-target="#exampleModalCenter">Book Now</button>
+                <button type="submit" name="confirm" class="submit-btn" data-toggle="modal" data-target="#exampleModalCenter">Book Now</button>
               </div>
             </form>
           </div>
@@ -178,13 +199,23 @@
 	  <div class="modal-dialog modal-dialog-centered" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h2 class="modal-title" id="exampleModalLongTitle">Congratulations !!!</h2>
+	        <?php if ($error_message): ?>
+            <h2 class="modal-title" id="exampleModalLongTitle">Ooooops !!!</h2>
+            
+          <?php else: ?>
+            <h2 class="modal-title" id="exampleModalLongTitle">Congratulations !!!</h2>
+          <?php endif ?>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <p>"Thank you for wanting our service,we will notify you all the information regarding this form within 2 hours via email"</p>
+	        <?php if ($error_message): ?>
+            <p>"Something Went Wrong"</p>
+            
+          <?php else: ?>
+            <p>"Thank you for wanting our service,we will notify you all the information regarding this form within 2 hours via email"</p>
+          <?php endif ?>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-learn" data-dismiss="modal">Okay</button>
