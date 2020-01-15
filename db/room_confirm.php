@@ -101,6 +101,16 @@
 	{
 		if (substr($id, 0, 2) == 'sp') {
 			return "Hotel Supreme";
+		}else if(substr($id, 0, 2) == 'ga'){
+			return "Hotel Garden Inn";
+		}else if(substr($id, 0, 2) == 'nu'){
+			return "Hotel Noorjahan Grand";
+		}else if(substr($id, 0, 2) == 'ni'){
+			return "Nirvana Inn";
+		}else if(substr($id, 0, 2) == 'ss'){
+			return "Hotel Star Pacific";
+		}else if(substr($id, 0, 2) == 'ro'){
+			return "Rose View Hotel";
 		}else{
 			return "Hotel Name is Not Valid";
 		}
@@ -109,6 +119,7 @@
 	function checkRoomType($id)
 	{
 		switch ($id) {
+			//Supreme Room
 			case 'spDeluxeFamilyRoom':
 				return "Deluxe Family Room";
 				break;
@@ -125,6 +136,114 @@
 				return "Deluxe Double/Triple Room";
 				break;
 			case 'spSuperiorDoubleRoom':
+				return "Superior Double Room";
+				break;
+
+			// Garden In Room
+			case 'gaStandardSingleRoom':
+				return "Standard Single Room";
+				break;
+			case 'gaDeluxeDoubleRoom':
+				return "Deluxe Double Room";
+				break;
+			case 'gaDeluxeFamilyRoom':
+				return "Deluxe Family Room";
+				break;
+			case 'gaDeluxeQueenSuit':
+				return "Deluxe Queen Suit";
+				break;
+			case 'gaApartment':
+				return "Apartment";
+				break;
+			case 'gaDeluxeApartment':
+				return "Deluxe Apartment";
+				break;
+
+
+
+			// Noorjahan Grand Room
+			case 'nuBudgetSingleRoom':
+				return "Budget Single Room";
+				break;
+			case 'nuDeluxeDoubleRoom':
+				return "Deluxe Double Room";
+				break;
+			case 'nuDeluxeDoubleTwinRoom':
+				return "Deluxe Double/Twin Room";
+				break;
+			case 'nuDeluxeLargeRoom':
+				return "Deluxe Large Room";
+				break;
+			case 'nuDeluxeApartment':
+				return "Deluxe Apartment";
+				break;
+			case 'nuKingSuit':
+				return "King Suit";
+				break;
+
+
+
+			// Nirvana Inn Room
+			case 'niDeluxeFamilyRoom':
+				return "Deluxe Family Room";
+				break;
+			case 'niQueenSuit':
+				return "Queen Suit";
+				break;
+			case 'niKingSuit':
+				return "King Suit";
+				break;
+			case 'niTripleRoom':
+				return "Triple Room";
+				break;
+			case 'niDeluxeDoubleTripleRoom':
+				return "Deluxe Double/Triple Room";
+				break;
+			case 'niSuperiorDoubleRoom':
+				return "Superior Double Room";
+				break;
+
+
+
+			// Star Pacific Room
+			case 'ssPremiumQueenRoom':
+				return "Premium Queen Room";
+				break;
+			case 'ssSuperiorDoubleRoom':
+				return "Superior Double Room";
+				break;
+			case 'ssDeluxeQueenRoom':
+				return "Deluxe Queen Room";
+				break;
+			case 'ssKingSuit':
+				return "King Suit";
+				break;
+			case 'ssDeluxeTwinRoom':
+				return "Deluxe Twin Room";
+				break;
+			case 'ssExecutiveSuit':
+				return "Executive Suit";
+				break;
+
+
+
+			// Rose View Hotel Room
+			case 'roDeluxeTwinRoom':
+				return "Deluxe Twin Room";
+				break;
+			case 'roDeluxeSuit':
+				return "Deluxe Suit";
+				break;
+			case 'roExecutiveSuit':
+				return "Executive Suit";
+				break;
+			case 'roDeluxeFamilySuit':
+				return "Deluxe Family Suit";
+				break;
+			case 'roPresidentialSuit':
+				return "Presidential Suit";
+				break;
+			case 'roSuperiorDoubleRoom':
 				return "Superior Double Room";
 				break;
 
