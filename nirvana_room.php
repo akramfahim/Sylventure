@@ -120,7 +120,7 @@
 						<div class="hotel-grid" style="background-image: url(images/HSR_familyroom.jpg);">
 
 							<div class="price"><small>Price</small><span>BDT 1,700/night</span></div>
-							<a class="book-now text-center" href="room_reserve.php" target="_blank"><i class="ti-calendar"></i> Reserve Room</a>
+							<a class="book-now text-center" href="room_reserve.php?id=niDeluxeFamilyRoom" target="_blank"><i class="ti-calendar"></i> Reserve Room</a>
 						</div>
 						<div class="desc">
 							<h3>Deluxe Family room</h3>
@@ -133,7 +133,7 @@
 					<div class="hotel-content">
 						<div class="hotel-grid" style="background-image: url(images/HSR_queensuit.jpg);">
 							<div class="price"><small>Price</small><span>BDT 2,015/night</span></div>
-							<a class="book-now text-center"  href="room_reserve.php" target="_blank"><i class="ti-calendar"></i> Reserve Romm</a>
+							<a class="book-now text-center"  href="room_reserve.php?id=niQueenSuit" target="_blank"><i class="ti-calendar"></i> Reserve Romm</a>
 						</div>
 						<div class="desc">
 							<h3>Queen Suit</h3>
@@ -146,7 +146,7 @@
 					<div class="hotel-content">
 						<div class="hotel-grid" style="background-image: url(images/HSR_kingsuit.jpg);">
 							<div class="price"><small>Price</small><span>BDT 2,015/night</span></div>
-							<a class="book-now text-center" href="room_reserve.php" target="_blank"><i class="ti-calendar"></i> Reserve Room</a>
+							<a class="book-now text-center" href="room_reserve.php?id=niKingSuit" target="_blank"><i class="ti-calendar"></i> Reserve Room</a>
 						</div>
 						<div class="desc">
 							<h3>King Suit</h3>
@@ -160,7 +160,7 @@
 					<div class="hotel-content">
 						<div class="hotel-grid" style="background-image: url(images/HSR_tripleroom.jpg);">
 							<div class="price"><small>Price</small><span>BDT 2,015/night</span></div>
-							<a class="book-now text-center"  href="room_reserve.php" target="_blank"><i class="ti-calendar"></i> Reserve Room</a>
+							<a class="book-now text-center"  href="room_reserve.php?id=niTripleRoom" target="_blank"><i class="ti-calendar"></i> Reserve Room</a>
 						</div>
 						<div class="desc">
 							<h3>Triple Room</h3>
@@ -173,10 +173,10 @@
 					<div class="hotel-content">
 						<div class="hotel-grid" style="background-image: url(images/HSR_deluxedouble.jpg);">
 							<div class="price"><small>Price</small><span>BDT 2,015/night</span></div>
-							<a class="book-now text-center"  href="room_reserve.php" target="_blank"><i class="ti-calendar"></i> Reseve Room</a>
+							<a class="book-now text-center"  href="room_reserve.php?id=niDeluxeDoubleTripleRoom" target="_blank"><i class="ti-calendar"></i> Reseve Room</a>
 						</div>
 						<div class="desc">
-							<h3>Deluxe double/triple room</h3>
+							<h3>Deluxe double/Triple room</h3>
 							<p>This room has duble bed,decorated with suitable furniture and soundproof</iframe></p>
 						</div>
 					</div>
@@ -186,7 +186,7 @@
 					<div class="hotel-content">
 						<div class="hotel-grid" style="background-image: url(images/HSR_superiordroom.jpg);">
 							<div class="price"><small>Price</small><span>BDT 2,510/night</span></div>
-							<a class="book-now text-center"  href="room_reserve.php" target="_blank"><i class="ti-calendar"></i> Reserve room</a>
+							<a class="book-now text-center"  href="room_reserve.php?id=niSuperiorDoubleRoom" target="_blank"><i class="ti-calendar"></i> Reserve room</a>
 						</div>
 						<div class="desc">
 							<h3>Superior Double room</h3>
