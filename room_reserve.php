@@ -180,7 +180,9 @@
                 </div>
               </div>
               <div class="form-btn">
-                <button type="submit" name="confirm" class="submit-btn" data-toggle="modal" data-target="#exampleModalCenter">Book Now</button>
+                <div class="form-group">
+                  <button type="submit" name="confirm" class="submit-btn" data-toggle="modal" data-target="#exampleModalCenter">Book Now</button>
+                </div>
               </div>
             </form>
           </div>
@@ -198,25 +200,15 @@
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered" role="document">
 	    <div class="modal-content">
-	      <div class="modal-header">
-	        <?php if ($error_message): ?>
-            <h2 class="modal-title" id="exampleModalLongTitle">Ooooops !!!</h2>
-            
-          <?php else: ?>
-            <h2 class="modal-title" id="exampleModalLongTitle">Congratulations !!!</h2>
-          <?php endif ?>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          <span aria-hidden="true">&times;</span>
-	        </button>
-	      </div>
 	      <div class="modal-body">
-	        <?php if ($error_message): ?>
-            <p>"Something Went Wrong"</p>
-            
+          <?php if ($success_message): ?>
+            <h1 class="text-center text-success"><b>Hurray! Your Hotel Reservation Successfully Completed</b></h1>
+            <p>"We will notify you all the information regarding this form within 2 hours via email"</p>
           <?php else: ?>
-            <p>"Thank you for wanting our service,we will notify you all the information regarding this form within 2 hours via email"</p>
+            <h1 class="text-center text-danger"><b>Oooops !!!</b></h1>
+            <p>Something Went Wrong. Please Try Again Later</p>
           <?php endif ?>
-	      </div>
+        </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-learn" data-dismiss="modal">Okay</button>
 	      </div>
@@ -236,5 +228,10 @@
 
   <!-- My Customise JS -->
   <!-- <script src="js/main.js"></script> -->
+  <script type="text/javascript">
+    var url = window.location.href;
+    if(url.indexOf('?success_message') != -1 || url.IndexOf('/error_message') != -1) {
+        $('#exampleModalCenter').modal('show');
+    }
 </body>
 </html>
