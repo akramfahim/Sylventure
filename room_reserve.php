@@ -112,13 +112,13 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" type="date" name="datein" required id="m_date" min="<?php echo date('Y-m-d'); ?>">
+                    <input class="form-control" type="date" name="datein" required id="m_datein" min="<?php echo date('Y-m-d'); ?>">
                     <span class="form-label">Check In</span>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" type="date" required  name="dateout" id="m_date" min="<?php echo date('Y-m-d'); ?>">
+                    <input class="form-control" type="date" required  name="dateout" id="m_dateout" min="<?php echo date('Y-m-d'); ?>">
                     <span class="form-label">Check out</span>
                   </div>
                 </div>
