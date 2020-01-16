@@ -202,8 +202,8 @@
 	    <div class="modal-content">
 	      <div class="modal-body">
           <?php if ($success_message): ?>
-            <h1 class="text-center text-success"><b>Hurray! Your Hotel Reservation Successfully Completed</b></h1>
-            <p>"We will notify you all the information regarding this form within 2 hours via email"</p>
+            <h1 class="text-center text-success"><b>Hurray!!!</b></h1>
+            <p>"<b>Your Hotel Reservation Successfully Completed</b> We will notify you all the information regarding this form within 2 hours via email"</p>
           <?php else: ?>
             <h1 class="text-center text-danger"><b>Oooops !!!</b></h1>
             <p>Something Went Wrong. Please Try Again Later</p>
@@ -230,7 +230,7 @@
   <!-- <script src="js/main.js"></script> -->
   <script type="text/javascript">
     var url = window.location.href;
-    if(url.indexOf('?success_message') != -1 || url.IndexOf('/error_message') != -1) {
+    if(url.indexOf('?success_message') != -1 || url.IndexOf('?error_message') != -1) {
         $('#exampleModalCenter').modal('show');
     }
 </body>
