@@ -117,7 +117,7 @@
 				<div class="hotel-content">
 					<div class="hotel-grid" style="background-image: url(images/HGI_standardsingleroom.jpg);">
  						<div class="price"><small>Price</small><span>BDT 2,010/night</span></div>
-					    <a class="book-now text-center" href="room_reserve.php" target="_blank"><i class="ti-calendar"></i> Reserve Room</a>
+					    <a class="book-now text-center" href="room_reserve.php?id=gaStandardSingleRoom" target="_blank"><i class="ti-calendar"></i> Reserve Room</a>
 					</div>
 	  				<div class="desc">
 					   <h3>Standard Single Room</h3>
@@ -130,7 +130,7 @@
 	  			<div class="hotel-content">
 					<div class="hotel-grid" style="background-image: url(images/HGI_deluxedouble.jpg);">
  						<div class="price"><small>Price</small><span>BDT 2,511/night</span></div>
-					  	<a class="book-now text-center"  href="room_reserve.php" target="_blank"><i class="ti-calendar"></i> Reserve Romm</a>
+					  	<a class="book-now text-center"  href="room_reserve.php?id=gaDeluxeDoubleRoom" target="_blank"><i class="ti-calendar"></i> Reserve Romm</a>
 					</div>
 					<div class="desc">
 						<h3>Deluxe Double Room</h3>
@@ -143,7 +143,7 @@
 				<div class="hotel-content">
 					<div class="hotel-grid" style="background-image: url(images/HGI_deluxefamily.jpg);">
 		   				<div class="price"><small>Price</small><span>BDT 2,511/night</span></div>
-							<a class="book-now text-center" href="room_reserve.php" target="_blank"><i class="ti-calendar"></i> Reserve Room</a>
+							<a class="book-now text-center" href="room_reserve.php?id=gaDeluxeFamilyRoom" target="_blank"><i class="ti-calendar"></i> Reserve Room</a>
          			</div>
     				<div class="desc">
 						<h3>Deluxe Family Room</h3>
@@ -156,7 +156,7 @@
    				<div class="hotel-content">
    					<div class="hotel-grid" style="background-image: url(images/HGI_deluxequeen.jpg);">
 	 					<div class="price"><small>Price</small><span>BDT 4,070/night</span></div>
-	  					<a class="book-now text-center"  href="room_reserve.php" target="_blank"><i class="ti-calendar"></i> Reserve Room</a>
+	  					<a class="book-now text-center"  href="room_reserve.php?id=gaDeluxeQueenSuit" target="_blank"><i class="ti-calendar"></i> Reserve Room</a>
 					</div>
   					<div class="desc">
 						<h3>Deluxe Queen Suit</h3>
@@ -169,7 +169,7 @@
 				<div class="hotel-content">
 					<div class="hotel-grid" style="background-image: url(images/HGI_apartment.jpg);">
 						<div class="price"><small>Price</small><span>BDT 6,123/night</span></div>
-						<a class="book-now text-center"  href="room_reserve.php" target="_blank"><i class="ti-calendar"></i> Reseve Room</a>
+						<a class="book-now text-center"  href="room_reserve.php?id=gaApartment" target="_blank"><i class="ti-calendar"></i> Reseve Room</a>
 					</div>
 					<div class="desc">
 						<h3>Apartment</h3>
@@ -182,7 +182,7 @@
 				<div class="hotel-content">
 					<div class="hotel-grid" style="background-image: url(images/HGI_deluxeapartment.jpg);">
 						<div class="price"><small>Price</small><span>BDT 7,143/night</span></div>
-						<a class="book-now text-center"  href="room_reserve.php" target="_blank"><i class="ti-calendar"></i> Reserve room</a>
+						<a class="book-now text-center"  href="room_reserve.php?id=gaDeluxeApartment" target="_blank"><i class="ti-calendar"></i> Reserve room</a>
 					</div>
 					<div class="desc">
 						<h3>Deluxe Apartment</h3>
