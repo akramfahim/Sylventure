@@ -127,7 +127,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php?id=ACCar" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -162,45 +162,12 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php?id=ProboxCar" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
         </div>
         
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="item-1 bg-colorful p-2">
-            <a><img src="images/axio.jpg" alt="Image" class="img-fluid img-rounded"></a>
-            <div class="item-1-contents">
-              <div class="text-center">
-                <h4 class="m-2">Axio</h4>
-                
-                <div class="rent-price"><span>BDT 2,500/</span>day</div>
-              </div>
-              <ul class="specs">
-                <li>
-                  <span>Doors</span>
-                  <span class="spec">4</span>
-                </li>
-                <li>
-                  <span>Seats</span>
-                  <span class="spec">5</span>
-                </li>
-                <li>
-                  <span>Transmission</span>
-                  <span class="spec">Automatic</span>
-                </li>
-                <li>
-                  <span>Minium age</span>
-                  <span class="spec">18 years</span>
-                </li>
-              </ul>
-              <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="item-1 bg-colorful p-2">
@@ -230,11 +197,12 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php?id=EconomicSedan" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
         </div>
+
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="item-1 bg-colorful p-2">
             <a><img src="images/alion_sedan.jpg" alt="Image" class="img-fluid img-rounded"></a>
@@ -263,11 +231,12 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php?id=AllionSedan" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
         </div>
+
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="item-1 bg-colorful p-2">
             <a><img src="images/toyotacorolla_axio.jpg" alt="Image" class="img-fluid img-rounded"></a>
@@ -296,7 +265,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php?id=ToyotaCorollaAxio" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -330,7 +299,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php?id=Filder" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -365,7 +334,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php?id=TownAceNoah" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -399,41 +368,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="item-1 bg-colorful p-2">
-            <a><img src="images/hiace_micro.jpg" alt="Image" class="img-fluid img-rounded"></a>
-            <div class="item-1-contents">
-              <div class="text-center">
-                <h4 class="m-2">HighAce Micro</h4>
-
-                <div class="rent-price"><span>BDT 4,500/</span>day</div>
-              </div>
-              <ul class="specs">
-                <li>
-                  <span>Doors</span>
-                  <span class="spec">4</span>
-                </li>
-                <li>
-                  <span>Seats</span>
-                  <span class="spec">7</span>
-                </li>
-                <li>
-                  <span>Transmission</span>
-                  <span class="spec">Automatic</span>
-                </li>
-                <li>
-                  <span>Minium age</span>
-                  <span class="spec">18 years</span>
-                </li>
-              </ul>
-              <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php?id=HighAceMicro" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -468,7 +403,7 @@
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php?id=ToyotaNoah" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -498,12 +433,12 @@
                   <span class="spec">Automatic</span>
                 </li>
                 <li>
-                  <span>Minium age</span>
+                  <span>Minimum age</span>
                   <span class="spec">18 years</span>
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php?id=Mercedes" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
@@ -531,16 +466,17 @@
                   <span class="spec">Automatic</span>
                 </li>
                 <li>
-                  <span>Minium age</span>
+                  <span>Minimum age</span>
                   <span class="spec">18 years</span>
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php?id=Pajero" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
         </div>
+
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="item-1 bg-colorful p-2">
             <a><img src="images/rangerover.jpg" alt="Image" class="img-fluid img-rounded"></a>
@@ -564,12 +500,12 @@
                   <span class="spec">Automatic</span>
                 </li>
                 <li>
-                  <span>Minium age</span>
+                  <span>Minimum age</span>
                   <span class="spec">18 years</span>
                 </li>
               </ul>
               <div class="d-flex action">
-                <a href="car_reserve.php" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
+                <a href="car_reserve.php?id=RangeRover" target="_blank" class="btn btn-info ml-auto py-3 px-4">Rent Now</a>
               </div>
             </div>
           </div>
