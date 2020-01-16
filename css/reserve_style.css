@@ -1,10 +1,11 @@
-.section {
-   background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('../images/header.jpg');
+.section{
+   background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('../images/hotel_background.jpg');
 	background size: cover;
 	height: 100vh;
 	background-position: center;
 	position: relative;
 }
+
 
 .section .section-center {
 	position: absolute;
@@ -26,8 +27,6 @@
 	margin: auto;
 	padding: 40px;
 	overflow: hidden;
-	background-image: url('../img/reserve_background.jpg');
-	background-size: cover;
 	border-radius: 5px;
 	z-index: 20;
 }
