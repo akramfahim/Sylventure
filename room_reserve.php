@@ -1,4 +1,5 @@
 <?php 
+  $id="";
   if (isset($_GET['id'])) {
     $id = $_GET['id'];
     // echo $id;
@@ -227,7 +228,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>
 
   <!-- My Customise JS -->
-  <!-- <script src="js/main.js"></script> -->
+  <script src="js/main.js"></script>
+
   <script type="text/javascript">
     var url = window.location.href;
     if(url.indexOf('?success_message') != -1 || url.IndexOf('?error_message') != -1) {
