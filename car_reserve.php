@@ -1,3 +1,25 @@
+<?php 
+  $id="";
+  if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    // echo $id;
+  }
+
+  $success_message = "";
+  $error_message = "";
+
+  if (isset($_GET['success_message'])) {
+
+    $success_message = $_GET['success_message'];
+  
+  } else if (isset($_GET['error_message'])) {
+    
+    $error_message = $_GET['error_message']; 
+  
+  }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +97,7 @@
   </header>
 
 
-   <div id="booking" class="section">
+   <div id="booking" class="section" style="background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('images/car_header.jpg'); background size: cover;height: 100vh;background-position: center; position: relative;">
     <div class="section-center">
       <div class="container">
         <div class="row">
@@ -83,38 +105,19 @@
             <div class="form-header mt-3">
               <h1>Make your Vehicle Ready</h1>
             </div>
-            <form autocomplete="off">
 
-              <div class="form-group">
-                <select class="form-control" style="height: 60px;" required name="rooms">
-                  <option value="" selected hidden>Select Your Car</option>
-                  <option value="1">AC Car</option>
-                  <option value="1">Probox Car</option>
-                  <option value="1">Economic Sedan</option>
-                  <option value="1">Allion Sedan</option>
-                  <option value="1">ToyotaCorolla Axio</option>
-                  <option value="1">Filder</option>
-                  <option value="1">TownAce Noah</option>
-                  <option value="1">HighAce Micro</option>
-                  <option value="1">Toyota Noah</option>
-                  <option value="1">Mercedes</option>
-                  <option value="1">Pajero</option>
-                  <option value="1">Range Rover</option>
-                </select>
-                <span class="select-arrow"></span>
-                <span class="form-label">Car Type</span>
-              </div>
+            <form autocomplete="off" method="POST" action="db/car_confirm.php">
               
+              <input type="hidden" name="id" value=<?php echo $id; ?>>
               <div class="row">
-
-                <div class="col-md-6 p-0">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <select class="form-control" style="height: 60px;">
-                      <option value="" selected hidden>Pickup</option>
+                    <select class="form-control" name="pickup" style="height: 60px;">
+                      <option value="1" selected hidden>Pickup Point</option>
                       <option value="1">Pickup One</option>
-                      <option value="1">Pickup Two</option>
-                      <option value="1">Pickup Three</option>
-                      <option value="1">Pickup Four</option>
+                      <option value="2">Pickup Two</option>
+                      <option value="3">Pickup Three</option>
+                      <option value="4">Pickup Four</option>
                     </select>
                     <span class="select-arrow"></span>
                   </div>
@@ -122,39 +125,54 @@
                 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" type="date" required name="datein">
+                    <input class="form-control" type="date" required name="pickupDate" id="m_datein" min="<?php echo date('Y-m-d'); ?>">
                     <span class="form-label">Date</span>
                   </div>
                 </div>
                 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <select class="form-control" style="height: 60px;">
-                        <option value="" selected hidden>Drop off</option>
+                    <select class="form-control" name="dropoff" style="height: 60px;">
+                        <option value="1" selected hidden>Drop off Point</option>
                         <option value="1">Drop off One</option>
-                        <option value="1">Drop off Two</option>
-                        <option value="1">Drop off Three</option>
-                        <option value="1">Drop off Four</option>
+                        <option value="2">Drop off Two</option>
+                        <option value="3">Drop off Three</option>
+                        <option value="4">Drop off Four</option>
                       </select>
                     <span class="select-arrow"></span>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" type="date" required name="datein">
+                    <input class="form-control" type="date" required name="dropoffDate" id="m_dateout" min="<?php echo date('Y-m-d'); ?>">
                     <span class="form-label">Date</span>
                   </div>
                 </div>
-              </div>
-                            
-              <div class="from-group">
-                <input class="form-control txt-field m-2" type="text" name="name" placeholder="Your name">
-                <input class="form-control txt-field m-2" type="email" name="email" placeholder="Email address">
-                <input class="form-control txt-field m-2" type="tel" name="phone" placeholder="Phone number">
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input class="form-control txt-field m-2" type="text" name="name" required placeholder="Your name">
+                    <span class="form-label">Your Name</span>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input class="form-control txt-field m-2" type="email" name="email" required placeholder="Email address">
+                    <span class="form-label">Your Email</span>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input class="form-control txt-field m-2" type="tel" name="phone" required placeholder="Phone Number">
+                    <span class="form-label">Your Phone Number</span>
+                  </div>
+                </div>
               </div>
               <div class="form-group row">
                 <div class="col-md-12 p-0 text-center">
-                  <button type="reset" class="btn btn-info mt-2 py-3 px-4" data-toggle="modal" data-target="#exampleModalCenter">Confirm Car Booking</button>
+                  <button type="submit" name="carConfirm" class="btn btn-info mt-2 py-3 px-4" data-toggle="modal" data-target="#exampleModalCenter">Confirm Car Booking</button>
                 </div>
               </div>
             </form>
@@ -173,18 +191,21 @@
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	  <div class="modal-dialog modal-dialog-centered" role="document">
 	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h2 class="modal-title" id="exampleModalLongTitle">Congratulations !!!</h2>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          <span aria-hidden="true">&times;</span>
-	        </button>
-	      </div>
-	      <div class="modal-body">
-	        <p>"Thank you for wanting our service,we will notify you all the information regarding this form within 2 hours via email"</p>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-learn" data-dismiss="modal">Okay</button>
-	      </div>
+	      
+        <div class="modal-body">
+          <?php if ($success_message): ?>
+            <h1 class="text-center text-success"><b>Thank You</b></h1>
+            <p>"Thank you for wanting our service,we will notify you all the information regarding this form within 2 hours via email"</p>
+          <?php else: ?>
+            <h1 class="text-center text-danger"><b>Oooops !!!</b></h1>
+            <p>Something Went Wrong. Please Try Again Later</p>
+          <?php endif ?>
+        </div>
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-learn" data-dismiss="modal">Okay</button>
+        </div>
 	    </div>
 	  </div>
 	</div>
@@ -199,7 +220,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>
 
+
   <!-- My Customise JS -->
   <script src="js/main.js"></script>
+
+  <script type="text/javascript">
+    var url = window.location.href;
+    if(url.indexOf('?success_message') != -1 || url.IndexOf('/error_message') != -1) {
+        $('#exampleModalCenter').modal('show');
+    }
+</script>
 </body>
 </html>
