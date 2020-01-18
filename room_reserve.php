@@ -232,8 +232,11 @@
 
   <script type="text/javascript">
     var url = window.location.href;
-    if(url.indexOf('?success_message') != -1 || url.IndexOf('?error_message') != -1) {
+    if(url.indexOf('?success_message') != -1 || url.IndexOf('/error_message') != -1) {
         $('#exampleModalCenter').modal('show');
+    }else{
+      $('#exampleModalCenter').modal('hide');
     }
+  </script>
 </body>
 </html>
