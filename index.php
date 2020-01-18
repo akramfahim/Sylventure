@@ -1,321 +1,300 @@
 <?php 
-
-  $success_message = "";
-  $error_message = "";
-
-  if (isset($_GET['success_message'])) {
-
-    $success_message = $_GET['success_message'];
-  
-  } else if (isset($_GET['error_message'])) {
-    
-    $error_message = $_GET['error_message']; 
-  
-  }
-
+  include '../db/config.php';
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Flamenco&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <title>Sylventure | Admin Panel</title>
 
-    <!-- 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
-    -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style_hotel.css">
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
-    <title>SYLVENTURE | Home</title>
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+
 </head>
-<body>
-<header id="header">
-    <div class="container">
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand mr-1" href="index.html">Sylventure | Admin Panel</a>
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
+    <!-- Navbar -->
+
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="sidebar navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">
+          <i class="fas fa-envelope-square"></i>
+          <span>Clients Message</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="hotel_booking.php">
+          <i class="fas fa-hotel"></i>
+          <span>Hotel Booking</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="vehicle_booking.php">
+          <i class="fas fa-bus"></i>
+          <span>Vehicle Booking</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="restaurant_booking.php">
+          <i class="fas fa-utensils"></i>
+          <span>Restaurant Booking</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="doctor_booking.php">
+          <i class="fas fa-user-md"></i>
+          <span>Doctor Appointment</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="hospital_booking.php">
+          <i class="fas fa-clinic-medical"></i>
+          <span>Hospital Booking</span></a>
+      </li>
+    </ul>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">Overview</li>
+        </ol>
+
+        <!-- Icon Cards-->
         <div class="row">
-            <nav class="navbar navbar-expand-lg full-width">
-                <a class="navbar-brand" href="index.php">Sylventure</a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="ToggleNavigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="menu">
-                    <ul class="navbar-nav">
-                        <li class="nav-item "><a href="tourSight.php" class="nav-link">Tour Sight</a>
-                            <ul class="subMenu">
-                                <li><a href="#" class="nav-link">Jaflong</a></li>
-                                <li><a href="#" class="nav-link">Bichnakandi</a></li>
-                                <li><a href="#" class="nav-link">Vulagong Shada Pathor</a></li>
-                                <li><a href="#" class="nav-link">Jointa Hill Resort</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a href="hotels.php" class="nav-link">Hotel Booking</a>
-                            <ul class="subMenu">
-                                <li><a href="#" class="nav-link">Hotel Supreme</a></li>
-                                <li><a href="#" class="nav-link">Hotel Anuragh</a></li>
-                                <li><a href="#" class="nav-link">Hotel Star Specific</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a href="cars.php" class="nav-link">Transportation</a>
-                            <ul class="subMenu">
-                                <li><a href="#" class="nav-link">Journey by Bus</a></li>
-                                <li><a href="#" class="nav-link">Journey by Car</a></li>
-                                <li><a href="#" class="nav-link">Journey by Bike</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a href="food_gallery.php" class="nav-link">Food Gallery</a></li>
-                        <li class="nav-item"><a href="medical_emergency.php" class="nav-link">Medical Emergency</a>
-                            <ul class="subMenu">
-                                <li><a href="#" class="nav-link">Ibn Sina Hospital </a></li>
-                                <li><a href="#" class="nav-link">Al-haramain Hospital</a></li>
-                                <li><a href="#" class="nav-link">Noorjahan Hospital</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+          <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card text-white bg-primary o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-comments"></i>
                 </div>
-            </nav>
+                <div class="mr-5">New Clients Contact Message!</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="index.php">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card text-white bg-warning o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-list"></i>
+                </div>
+                <div class="mr-5">Hotel Booking Message</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="hotel_booking.php">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card text-white bg-success o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-shopping-cart"></i>
+                </div>
+                <div class="mr-5">Vehicle Rent</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="vehicle_booking.php">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card text-white bg-danger o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-life-ring"></i>
+                </div>
+                <div class="mr-5">Doctor Appointment Request</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="doctor_booking.php">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+		      <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card text-white bg-info o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-life-ring"></i>
+                </div>
+                <div class="mr-5">Hospital Booking Request</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="hospital_booking.php">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+		      <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card text-white bg-primary o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-list"></i>
+                </div>
+                <div class="mr-5">Food Booking Request</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="restaurant_booking.php">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
+
+        <?php 
+          $statement = $pdo->prepare("SELECT * FROM `clients`");
+          $statement->execute();
+          $clients = $statement->fetchAll(PDO::FETCH_ASSOC);
+        ?>
+
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Contact Messages</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Message</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <?php foreach ($clients as $client): ?>
+                    <tr>
+                    <td><?php echo $client['name'] ?></td>
+                    <td><?php echo $client['email'] ?></td>
+                    <td><?php echo $client['phone'] ?></td>
+                    <td><?php echo $client['msg'] ?></td>
+                  </tr>
+                  <?php endforeach ?>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.container-fluid -->
+
+      <!-- Sticky Footer -->
+      <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © Sylventure 2019</span>
+          </div>
+        </div>
+      </footer>
+
     </div>
-</header>
+    <!-- /.content-wrapper -->
 
+  </div>
+  <!-- /#wrapper -->
 
-<div class="index-header container-fluid">
-    <div class="main-content-header">
-        <h2> WELCOME TO <span class="colorchange">SYLVENTURE</span>.<br> A SYLHET CITY TOUR GUIDE FOR ADVENTOROUS PEOPLE. </h2>
-        <a href="#about-us" class="btn btn-learn">click to learn more</a>
-        <a href="#contact" class="btn btn-info">click for contact information</a>
-    </div>
-    <svg viewBox="0 0 1400 100" class="svg-bottom">
-        <polygon points="0,0 200,100 1200,100 1400,0 1400,100 0,100 0,0" style="fill:white";>
-    </svg>
-</div>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-<!-- About US Section -->
-<section id="about-us">
-    <div class="container">
-        <div class="row">
-            <div class="about-us-header">
-                <h1>About Us</h1>
-            </div>
-            <div class="col-6">
-                <div class="about-us-image">
-                    <img src="images/about_us.jpg" class="img-fluid" alt="about-us">
-                </div>
-
-            </div>
-            <div class="col-6">
-                <div class="abou-us-content">
-                    <p>Each and every expanse of Bangladesh abounds in greenery, but none can compare with Sylhet. From spinning hills covered in lush green tea gardens and gleaming paddy fields to olive marshlands and reserved forests, Sylhet seems to have been blessed with every possible shade of green one can imagine.<br>Sylventure is a platform to inspire people to explore greater Sylhet. Our purpose is to deliver growth for Sylhet by attracting visitors and building Sylhet’s reputation as a true destination.
-                        Explore diverse range of tourist destinations from all four districts of Sylhet Division with Sylventure.</p>
-                </div>
-
-            </div>
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
         </div>
-    </div>
-</section>
-<!-- About US Section End -->
-
-<!-- Services section -->
-<section id="what-we-do">
-    <svg viewBox="0 0 1400 100" class="svg-top">
-        <polygon points="0,100 200,0 1200,0 1400,100 1400,0 0,0 0,100" style="fill:white";>
-    </svg>
-    <div class="container-fluid" style="width:100%">
-        <div class="parallax">
-            <h2 class="section-title mb-2 text-white">What We Provide</h2>
-            <p class="text-center text-white">We Can Make Your Trip Easier</p>
-            <div class="row mt-5">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                    <div class="card">
-                        <div class="card-block block-1">
-                            <h3 class="card-title">Hotel Reservation</h3>
-                            <p class="card-text">Book your Hotel in Sylhet online. No reservation costs. Great rates.</p>
-                            <a href="javascript:void();" title="Read more" class="read-more" >Show more<i class="fa fa-angle-double-right ml-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                    <div class="card">
-                        <div class="card-block block-2">
-                            <h3 class="card-title">Car Rent</h3>
-                            <p class="card-text">Compare and Save Big on Sylhet Car Rentals.Unbeatable Rates.Book Now,Pay Later </p>
-                            <a href="javascript:void();" title="Read more" class="read-more" >Show more<i class="fa fa-angle-double-right ml-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                    <div class="card">
-                        <div class="card-block block-4">
-                            <h3 class="card-title">Doctor Appointment Booking</h3>
-                            <p class="card-text">Search for doctors booking information.Find a nearby doctor or dentist and book an appointment instantly.</p>
-                            <a href="javascript:void();" title="Read more" class="read-more" >Show more<i class="fa fa-angle-double-right ml-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                    <div class="card">
-                        <div class="card-block block-5">
-                            <h3 class="card-title">Hospital Cabin Bookin</h3>
-                            <p class="card-text">Book available patient cabin fast in emergency.Book fist,pay later.</p>
-                            <a href="javascript:void();" title="Read more" class="read-more" >Show more<i class="fa fa-angle-double-right ml-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /Services section -->
-
-<!-- Contact US Section Start -->
-<section id="contact">
-    <div class="section-content">
-        <h1 class="section-header">Get in <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Touch with us</span></h1>
-        <h3>Contact us for any requering information. We will get in touch with you as soon as possible.</h3>
-    </div>
-    <div class="contact-section">
-        <div class="container">
-            <form action="db/contact.php" method="post">
-                <div class="row">
-                    <div class="col-md-6 form-line">
-                        <div class="form-group">
-                            <label for="name">Your name</label>
-                            <input type="text" name="name" class="form-control" id="" placeholder=" Enter Name" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" name="email" class="form-control" id="email" placeholder=" Enter Email id" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Mobile No.</label>
-                            <input type="tel" name="phone" class="form-control" id="phone" placeholder=" Enter 10-digit mobile no." required="required" >
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for ="msg"> Message</label>
-                            <textarea  class="form-control" name="msg" id="msg" placeholder="Enter Your Message" required="required"></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" name="submit" class="btn btn-default submit" id="register" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
-                        </div>
-
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
-<!-- Contact US section End -->
-
-<!-- Footer -->
-<section id="footer">
-    <div class="container">
-        <div class="row text-center text-xs-center text-sm-left text-md-left">
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h5>Features</h5>
-                <ul class="list-unstyled quick-links">
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Tourist Spots</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Accomodation</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Restaurents</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Medical Emergency</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Transportation Management</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h5>Services</h5>
-                <ul class="list-unstyled quick-links">
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Hotel Room Booking</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Doctor Appointment Booking</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Hospital Cabin Booking</a></li>
-                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Rent A Car</a></li>
-
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-                <ul class="list-unstyled list-inline social text-center">
-                    <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=100004571835201"><i class="fa fa-facebook"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
-                </ul>
-            </div>
-            </hr>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-                <p>Sylventure Private Company Limited</p>
-                <p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="#" target="_blank">Sylvanture</a></p>
-            </div>
-            </hr>
-        </div>
-    </div>
-</section>
-<!-- ./Footer -->
-
-<!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          
-        <div class="modal-body">
-          <?php if ($success_message): ?>
-            <h1 class="text-center text-success"><b>Thank You</b></h1>
-            <p>"Thank you for wanting our service,we will notify you all the information regarding this form within 2 hours via email"</p>
-          <?php else: ?>
-            <h1 class="text-center text-danger"><b>Oooops !!!</b></h1>
-            <p>Something Went Wrong. Please Try Again Later</p>
-          <?php endif ?>
-        </div>
-
-
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-learn" data-dismiss="modal">Okay</button>
-        </div>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
       </div>
     </div>
+  </div>
 
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
 
+  <!-- Demo scripts for this page-->
+  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
 
-<!-- My Customise JS -->
-<script src="js/main.js"></script>
-
-<script type="text/javascript">
-    var url = window.location.href;
-    if(url.indexOf('?success_message') != -1 || url.IndexOf('/error_message') != -1) {
-        $('#exampleModalCenter').modal('show');
-    }else{
-      $('#exampleModalCenter').modal('hide');
-    }
-  </script>
 </body>
+
 </html>
