@@ -60,7 +60,7 @@
         	unset($_POST['msg']);
 	        $success_message = 'Thank You For Contacting Us.';  
 
-	        header("location: ../index.php");    
+	        header("location: ../index.php?success_message=".$success_message);    
 	    }
 		
 	}
