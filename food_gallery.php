@@ -95,11 +95,23 @@
             <h1 class="site-heading site-animate mb-3">Welcome To Sylhety Food</h1>
             <h2 class="h5 site-subheading mb-5 site-animate">Come and eat well with our delicious &amp; healthy foods.</h2>    
             <p><a href="https://colorlib.com/" target="_blank" class="btn btn-info btn-outline-white btn-lg site-animate" data-toggle="modal" data-target="#reservationModal">Reservation</a></p>
+
+            <?php
+              if ($success_message):
+                  echo "<div class='alert alert-success container text-center'><h3>Hurray You have booked A Table For Your Food</h3></div>";
+              elseif ($error_message):
+                  echo "<div class='alert alert-danger container text-center'><h3>Oppps Something Went Wrong</h3></div>";
+              else:
+                  echo "<div class='Alert' style='display:none'>Thank You</div>";
+              endif;
+            ?>
           </div>
         </div>
       </div>
     </section>
     <!-- END section -->
+
+    
 
     <section class="site-section" id="section-about">
       <div class="container">
@@ -459,68 +471,85 @@
                 <h2 class="text-center mb-4">Reserve A Table</h2>  
                 <form action="db/food_confirm.php" method="post">
                   <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="m_fname">Your Name</label>
-                      <input type="text" name="name" class="form-control" id="m_fname">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input class="form-control" type="text" name="name" placeholder="Please enter your name" required>
+                      </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="m_email">Your Email</label>
-                      <input type="email" name="email" class="form-control" id="m_email">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input class="form-control" type="email" placeholder="Enter your Email" name="email" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input class="form-control" type="tel" placeholder="Enter you Phone" name="phone" required>
+                      </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="m_phone">Your Phone Number</label>
-                      <input type="tel" name="phone" class="form-control" id="m_phone">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <select class="form-control" required name="restaurant">
+                          <option value="" selected hidden>Choose Your Restaurent</option>
+                          <option value="Panshi_Restaurant">Panshi Restaurant</option>
+                          <option value="Pachvai_Restaurant">Pachvai Restaurant</option>
+                          <option value="Vujonbari_Restaurant">Vujonbari Restaurant</option>
+                          <option value="Palki_Restaurant">Vujonbari Restaurant</option>
+                          <option value="Kazi_Asparagus_Restaurant">Kazi Asparagus Restaurant</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <select class="form-control" required name="person">
+                          <option value="" selected hidden>No of Person</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4andMore">4+</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input class="form-control" type="date" name="bookingDate" required id="m_datein" min="<?php echo date('Y-m-d'); ?>">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <select class="form-control" required name="bookingTime">
+                          <option value="" selected hidden>Pick Your Desire Time</option>
+                          <option value="7AM">7 AM</option>
+                          <option value="8AM">8 AM</option>
+                          <option value="2PM">2 PM</option>
+                          <option value="3PM">3 PM</option>
+                          <option value="8PM">8 PM</option>
+                          <option value="9PM">9 PM</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-6 form-group">
-                      <label for="m_restaurant">Choose Your Restaurant</label>
-                      <select name="restaurant" id="m_restaurant" class="form-control">
-                        <option value="Pansi_Restaurant">Pansi Restaurent</option>
-                        <option value="Pachvai_Restaurant">Pachvai Restaurant</option>
-                        <option value="Vujonbari_Restaurant">Vujonbari Restaurant</option>
-                        <option value="Palki_Restaurent">Palki Restaurent</option>
-                      </select>
-                    </div>
-                    <div class="col-md-6 form-group">
-                      <label for="m_people">How Many People</label>
-                      <select name="person" id="m_people" class="form-control">
-                        <option value="1">1 People</option>
-                        <option value="2">2 People</option>
-                        <option value="3">3 People</option>
-                        <option value="4+">4+ People</option>
-                      </select>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea class="form-control" id="message" name="message" rows="3" placeholder="Write Your Message Here"></textarea>
+                      </div>
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <label for="m_date">Date</label>
-                      <input type="date" name="booking_date" class="form-control" id="m_date">
-                    </div>
-                    <div class="col-md-6 form-group">
-                      <label for="m_time">Time</label>
-                      <input type="text" name="booking_time" class="form-control" id="m_time">
+              
+                  <div class="form-btn">
+                    <div class="form-group">
+                      <button type="submit" name="foodConfirm" class="submit-btn btn btn-learn btn-block">Book Now</button>
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="m_message">Message</label>
-                      <textarea class="form-control" name="message" id="m_message" cols="15" rows="5"></textarea>
-                    </div>
-                  </div>
-                  
-                  <div class="row">
-                    <div class="col-md-12 form-group">
-                      <input type="submit" name="foodConfirm" class="btn btn-learn btn-lg btn-block" value="Reserve Now">
-                    </div>
-                  </div>
-
                 </form>
               </div>
             </div>
