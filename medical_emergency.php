@@ -1,3 +1,18 @@
+<?php 
+  $success_message = "";
+  $error_message = "";
+
+  if (isset($_GET['success_message'])) {
+
+    $success_message = $_GET['success_message'];
+  
+  } else if (isset($_GET['error_message'])) {
+    
+    $error_message = $_GET['error_message']; 
+  
+  }
+  
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +38,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_hotel.css"> 
 
-    <title>SYLVENTURE | Home</title>
+    <title>SYLVENTURE | Medical Emergency</title>
 </head>
 <body>
   <header id="header">   
@@ -174,7 +189,6 @@
                   <div class="col-12 col-md-6 col-lg-4">
                     <div class="our-departments-cont">
                       <header class="entry-header d-flex flex-wrap align-items-center">
-                        <img src="images/cardiogram.png" alt="">
 
                         <h3><b>Cardiologist</b></h3>
                       </header>
@@ -225,7 +239,6 @@
                  <div class="col-12 col-md-6 col-lg-4">
                   <div class="our-departments-cont">
                     <header class="entry-header d-flex flex-wrap align-items-center">
-                      <img src="images/blood-sample-2.png" alt="">
 
                       <h3><b>Medicine</b></h3>
                     </header>
@@ -262,7 +275,6 @@
                 <div class="col-12 col-md-6 col-lg-4">
                   <div class="our-departments-cont">
                     <header class="entry-header d-flex flex-wrap align-items-center">
-                      <img src="images/scanner.png" alt="">
 
                       <h3><b>Orthopaedist</b></h3>
                     </header>
@@ -585,105 +597,56 @@
               <p>Make an appointment to visit doctor. Here you can easily book an appointment to visit any
               particular doctor in shortest amount of time without any hectics.</p>
             </div>
-            <form action="#" class="appointment-form ftco-animate">
+
+            <form action="db/medical_confirm.php" method="post" class="appointment-form ftco-animate">
               <div class="d-md-flex">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Enter Your Name">
+                  <input type="text" name="name" class="form-control" placeholder="Enter Your Name" required="required">
                 </div>
                 <div class="form-group ml-md-4">
-                  <input type="text" class="form-control" placeholder="Enter Your Email">
+                  <input type="email" name="email" class="form-control" placeholder="Enter Your Email" required="required">
+                </div>
+              </div>
+              <div class="d-flex flex-wrap justify-content-between">
+                <div class="form-group">
+                  <input type="tel" name="phone" class="form-control" placeholder="Enter Your Phone" required="required">
                 </div>
               </div>
 
 
-
                <form class="d-flex flex-wrap justify-content-between">
-                            <select class="select-department">
-                                <option>Departments</option>
-                                <option value="value1">Cardiologist</option>
-                                <option value="value2">Gynecologist</option>
-                                <option value="value3">Medicine</option>
-                                <option value="value3">Dentist</option>
-                                <option value="value3">Surgeon</option>
-                                <option value="value3">Neurologist</option>
-                                <option value="value3">Orthopaedist</option>
-                                <option value="value3">Pediatrics</option>
-                                <option value="value3">Eye Specialist</option>
-
-                            </select>
-
-                            <select class="select-doctor">
-                                <option>Select doctor</option>
-                                <option>DR. AJOY KUMAR DATTA</option>
-                                <option>DR. K M AKHTARUZZAMAN</option>
-                                <option>DR. M NURUL AFSAR (BADRUL)</option>
-                                <option>DR. MD FARUQUE UDDIN</option>
-                                <option>DR. MD AMINUR RAHMAN LASKAR</option>
-                                <option>DR. DIPU DAS</option>
-                                <option>DR. ABDUR RAZZAK</option>
-                                <option>DR. AFROZA BEGUM SHEELA</option>
-                                <option>DR. BIPASHA DEY</option>
-                                <option>DR. DILIP KUMAR BHOWMIK</option>
-                                <option>DR. MD JALAL HOSSEN</option>
-                                <option>DR. MD FOJLE BARI</option>
-                                <option>DR. MD FAYZUL ISLAM CHOWDHURY</option>
-                                <option>DR. BILKIS SULTANA</option>
-                                <option>DR. MD FAZLE ELAHI NOORANI</option>
-                                <option>DR JAMIL MOHAMMAD HUSSAIN</option>
-                                <option>DR RUKSANA SHIKDAR</option>
-                                <option>DR. K. M. PARVEZ ALAM</option>
-                                <option>DR. MD. MAHBUBUR RAHMAN</option>
-                                <option>DR MD ARIFUR RAHMAN</option>
-                                <option>DR. ABDUL MANNAN</option>
-                                <option>DR. AZIZUR RAHMAN</option>
-                                <option>DR. K. Z. ALAM</option>
-                                <option>DR. NURUL KAIYUM MD. MUSALLIN</option>
-                                <option>DR. PARVEEN AKTHER</option>
-                                <option>DR. MD. MOSTAFIZUR RAHMAN RAKIB</option>
-                                <option>DR. MD. SHAFIULLAH</option>
-                                <option>DR. SHUDARSHAN SEN</option>
-                                <option>DR.MD. MUKHLESUR RAHMAN</option>
-                                <option>DR. AMINUR RAHMAN</option>
-                                <option>DR. ALOMGIR ADIL SAMDANI</option>
-                                <option>DR. DEBASHISH DEY (DIP)</option>
-                                <option>DR. DIPONKAR NATH TALUKDAR</option>
-                                <option>DR. FORID AHMED</option>
-                                <option>DR. MAHMUD JAMAN CHOWDHURY</option>
-                                <option>DR. A. T. REZA AHMED</option>
-                                <option>DR. MD. JAKARIYA HOSSEN</option>
-                                <option>DR. SYED MOHAMMAD KHOSRU</option>
-                                <option>DR MD. SHAHRIAR KHAN</option>
-                                <option>DR. SHUVRATA BHOUMIK</option>
-                                <option>DR. MD. SAHEDUL HASAN</option>
-                                <option>DR. KAZI MD. DIDAR-A-MOSTAFA</option>
-                                <option>DR. NILUFAR JAHAN</option>
-                                <option>PROFESSOR DR. SHAMSUL ALAM CHOWDHURY</option>
-                                <option>DR. A. N. M YOUSUF</option>
-                                
                             
+                          <div class="form-group">
+                            <select class="select-doctor" name="doctor" required="required">
+                                <option>Select doctor</option>
+                                <option value="DR. AJOY KUMAR DATTA">DR. AJOY KUMAR DATTA</option>
+                                <option value="DR. K M AKHTARUZZAMAN">DR. K M AKHTARUZZAMAN</option>
+                                <option value="DR. MD AMINUR RAHMAN LASKAR">DR. MD AMINUR RAHMAN LASKAR</option>
+                                <option value="Dr. MD Jalal Hossen">Dr. MD Jalal Hossen</option>
+                                <option value="DR. MD Fojle Bari">DR. MD Fojle Bari</option>
+                                <option value="Dr. MD Fayzul Islam Chowdhury">Dr. MD Fayzul Islam Chowdhury</option>
+                                <option value="DR. MD. MOSTAFIZUR RAHMAN RAKIB">DR. MD. MOSTAFIZUR RAHMAN RAKIB</option>
+                                <option value="DR. MD. SHAFIULLAH">DR. MD. SHAFIULLAH</option>
+                                <option value="Dr. Bilkis Sultana">Dr. Bilkis Sultana</option>
                             </select>
+                          </div>
 
 
               <div class="d-md-flex">
                 <div class="form-group">
                   <div class="input-wrap">
                     <div class="icon"><span class="ion-md-calendar"></span></div>
-                    <input type="text" class="form-control appointment_date" placeholder="Date">
+                    <input type="date" name="bookingDate" id="" required="required" class="form-control appointment_date" placeholder="Date" min="<?php echo date('Y-m-d'); ?>">
                   </div>
-                </div>
-                <div class="form-group ml-md-4">
-                  <div class="input-wrap">
-                    <div class="icon"><span class="ion-ios-clock"></span></div>
-                    <input type="text" class="form-control appointment_time" placeholder="Time">
-                  </div>
-                </div>
+               </div>
+                
               </div>
               <div class="d-md-flex">
                 <div class="form-group">
-                  <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
+                  <textarea name="message" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
                 </div>
                 <div class="form-group ml-md-4">
-                  <input type="submit" value="Appointment" class="btn btn-info py-3 px-4">
+                  <input type="submit" name="drConfirm" value="Appointment" class="btn btn-info py-3 px-4" data-toggle="modal" data-target="#exampleModalCenter">
                 </div>
               </div>
             </form>
@@ -701,73 +664,55 @@
               <p>Book your cabin fast and without any complexity in emergency.You can book a cabin from the best 
               hospital in sylhet town with various range of budget.</p>
             </div>
-            <form action="#" class="appointment-form ftco-animate">
+            <form action="db/medical_confirm.php" method="post" class="appointment-form ftco-animate">
               <div class="d-md-flex">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Enter Your Name">
+                  <input type="text" name="name" class="form-control" placeholder="Enter Your Name" required="required">
                 </div>
                 <div class="form-group ml-md-4">
-                  <input type="text" class="form-control" placeholder="Enter Your Email">
+                  <input type="email" name="email" class="form-control" placeholder="Enter Your Email" required="required">
+                </div>
+              </div>
+              <div class="d-flex flex-wrap justify-content-between">
+                <div class="form-group">
+                  <input type="tel" name="phone" class="form-control" placeholder="Enter Your Phone" required="required">
                 </div>
               </div>
 
 
                <form class="d-flex flex-wrap justify-content-between">
-                            <select class="select-department">
-                                <option>Hospitals</option>
-                                <option value="value1">Oasis Hospital.</option>
-                                <option value="value2">AL Haramain Hospital</option>
-                                <option value="value3">IBN Sina Hospital Limited</option>
-                                <option value="value3">Popular Medical Centre</option>
-                                <option value="value3">Mount Adora Hospital</option>
-                                <option value="value3">Women's Medical College.</option>
-                                <option value="value3">Park View Medical Hospital</option>
-                                <option value="value3">Jalalabad Ragib-Rabeya medical Hospital</option>
-                                <option value="value3">National Heart Foundation</option>
-                                <option value="value3">MAG Osmani Medical College</option>
-                                <option value="value3">Lions Children Hospital</option>
-                                <option value="value3">North East Medical College</option>
-
+                          <div class="form-group">
+                            <select class="select-doctor" name="hospital" required="required">
+                                <option>Select Hospital</option>
+                                <option value="Oasis Hospital">Oasis Hospital</option>
+                                <option value="AL Haramain Hospital">AL Haramain Hospital</option>
+                                <option value="IBN Sina Hospital Limited">IBN Sina Hospital Limited</option>
+                                <option value="Popular Medical Centre">Popular Medical Centre</option>
+                                <option value="Mount Adora Hospital">Mount Adora Hospital</option>
+                                <option value="Women's Medical College">Women's Medical College.</option>
+                                <option value="Park View Medical Hospital">Park View Medical Hospital</option>
+                                <option value="Jalalabad Ragib-Rabeya medical Hospital">Jalalabad Ragib-Rabeya medical Hospital</option>
 
                             </select>
+                          </div>
 
-                            <select class="select-doctor">
-                                <option>Select Price</option>
-                                <option>1,000-1,500</option>
-                                <option>1,600-2000</option>
-                                <option>2,100-2,500</option>
-                                <option>3,100-3,500</option>
-                                <option>4,100-4,500</option>
-                                <option>5,100-5,500</option>
-                                <option>6,100-6,500</option>
-                                <option>7,100-7,500</option>
-                                <option>8,100-8,500</option>
-                                <option>9,100-9,500</option>
-                                 <option>10,000</option>
                             
-                            </select>
 
 
               <div class="d-md-flex">
                 <div class="form-group">
                   <div class="input-wrap">
                     <div class="icon"><span class="ion-md-calendar"></span></div>
-                    <input type="text" class="form-control appointment_date" placeholder="Date">
-                  </div>
-                </div>
-                <div class="form-group ml-md-4">
-                  <div class="input-wrap">
-                    <div class="icon"><span class="ion-ios-clock"></span></div>
-                    <input type="text" class="form-control appointment_time" placeholder="Time">
+                    <input type="date" name="bookingDate" id="pickDate" class="form-control appointment_date" required="required" placeholder="Date" min="<?php echo date('Y-m-d'); ?>">
                   </div>
                 </div>
               </div>
               <div class="d-md-flex">
                 <div class="form-group">
-                  <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
+                  <textarea name="message" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
                 </div>
                 <div class="form-group ml-md-4">
-                  <input type="submit" value="Appointment" class="btn btn-info py-3 px-4">
+                  <input type="submit" name="cabinConfirm" value="Appointment" class="btn btn-info py-3 px-4">
                 </div>
               </div>
             </form>
@@ -829,6 +774,29 @@
         </div>
     </section>
     <!-- ./Footer -->
+
+    <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+          <?php if ($success_message): ?>
+            <h1 class="text-center text-success"><b>Thank You</b></h1>
+            <p>"You Have Successfully Booked an Appointment. We will contact you within 2 hours"</p>
+          <?php else: ?>
+            <h1 class="text-center text-danger"><b>Oooops !!!</b></h1>
+            <p>Something Went Wrong. Please Try Again Later</p>
+          <?php endif ?>
+        </div>
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-learn" data-dismiss="modal">Okay</button>
+        </div>
+      </div>
+    </div>
+  </div>
     
 
 
@@ -843,5 +811,14 @@
 
   <!-- My Customise JS -->
   <script src="js/main.js"></script>
+
+  <script type="text/javascript">
+    var url = window.location.href;
+    if(url.indexOf('?success_message') != -1 || url.IndexOf('/error_message') != -1) {
+        $('#exampleModalCenter').modal('show');
+    }else{
+      $('#exampleModalCenter').modal('hide');
+    }
+  </script>
 </body>
 </html>
