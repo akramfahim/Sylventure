@@ -1,3 +1,18 @@
+<?php 
+  $success_message = "";
+  $error_message = "";
+
+  if (isset($_GET['success_message'])) {
+
+    $success_message = $_GET['success_message'];
+  
+  } else if (isset($_GET['error_message'])) {
+    
+    $error_message = $_GET['error_message']; 
+  
+  }
+  
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -437,68 +452,72 @@
         <div class="modal-content">
           <div class="modal-body">
             <div class="row">
-              <div class="col-lg-12">
-                <div class="bg-image" style="background-image: url(images/reservation_1.jpg);"></div>
-              </div>
               <div class="col-lg-12 p-5">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <small>CLOSE </small><span aria-hidden="true">&times;</span>
                 </button>
                 <h2 class="text-center mb-4">Reserve A Table</h2>  
-                <form action="#" method="post">
+                <form action="db/food_confirm.php" method="post">
                   <div class="row">
-                    <div class="col-md-6 form-group">
-                      <label for="m_fname">First Name</label>
-                      <input type="text" class="form-control" id="m_fname">
-                    </div>
-                    <div class="col-md-6 form-group">
-                      <label for="m_lname">Last Name</label>
-                      <input type="text" class="form-control" id="m_lname">
+                    <div class="col-md-12 form-group">
+                      <label for="m_fname">Your Name</label>
+                      <input type="text" name="name" class="form-control" id="m_fname">
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12 form-group">
-                      <label for="m_email">Email</label>
-                      <input type="email" class="form-control" id="m_email">
+                      <label for="m_email">Your Email</label>
+                      <input type="email" name="email" class="form-control" id="m_email">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="m_phone">Your Phone Number</label>
+                      <input type="tel" name="phone" class="form-control" id="m_phone">
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 form-group">
+                      <label for="m_restaurant">Choose Your Restaurant</label>
+                      <select name="restaurant" id="m_restaurant" class="form-control">
+                        <option value="Pansi_Restaurant">Pansi Restaurent</option>
+                        <option value="Pachvai_Restaurant">Pachvai Restaurant</option>
+                        <option value="Vujonbari_Restaurant">Vujonbari Restaurant</option>
+                        <option value="Palki_Restaurent">Palki Restaurent</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6 form-group">
                       <label for="m_people">How Many People</label>
-                      <select name="" id="m_people" class="form-control">
+                      <select name="person" id="m_people" class="form-control">
                         <option value="1">1 People</option>
                         <option value="2">2 People</option>
                         <option value="3">3 People</option>
                         <option value="4+">4+ People</option>
                       </select>
                     </div>
-                    <div class="col-md-6 form-group">
-                      <label for="m_phone">Phone</label>
-                      <input type="text" class="form-control" id="m_phone">
-                    </div>
                   </div>
 
                   <div class="row">
                     <div class="col-md-6 form-group">
                       <label for="m_date">Date</label>
-                      <input type="text" class="form-control" id="m_date">
+                      <input type="date" name="booking_date" class="form-control" id="m_date">
                     </div>
                     <div class="col-md-6 form-group">
                       <label for="m_time">Time</label>
-                      <input type="text" class="form-control" id="m_time">
+                      <input type="text" name="booking_time" class="form-control" id="m_time">
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="m_message">Message</label>
-                      <textarea class="form-control" id="m_message" cols="30" rows="7"></textarea>
+                      <textarea class="form-control" name="message" id="m_message" cols="15" rows="5"></textarea>
                     </div>
                   </div>
                   
                   <div class="row">
                     <div class="col-md-12 form-group">
-                      <input type="submit" class="btn btn-learn btn-lg btn-block" value="Reserve Now">
+                      <input type="submit" name="foodConfirm" class="btn btn-learn btn-lg btn-block" value="Reserve Now">
                     </div>
                   </div>
 
@@ -529,5 +548,6 @@
 
   <!-- My Customise JS -->
   <script src="js/main.js"></script>
+
 </body>
 </html>
