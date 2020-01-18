@@ -231,6 +231,6 @@
     }else{
       $('#exampleModalCenter').modal('hide');
     }
-</script>
+  </script>
 </body>
 </html>
