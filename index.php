@@ -1,71 +1,20 @@
+<?php 
+
+  $success_message = "";
+  $error_message = "";
+
+  if (isset($_GET['success_message'])) {
+
+    $success_message = $_GET['success_message'];
+  
+  } else if (isset($_GET['error_message'])) {
+    
+    $error_message = $_GET['error_message']; 
+  
+  }
 
 
-<?php
-//include 'db/config.php';
-//
-//$name = "";
-//$email = "";
-//$phone = "";
-//$msg = "";
-//
-//$error_message = "";
-//$success_message = "";
-//
-//if (isset($_POST['submit'])) {
-//
-//$valid = 1;
-//
-//if (empty($_POST['name'])) {
-//    $valid = 0;
-//    $error_message .= urlencode("Name field can not be empty");
-//    header("location: index.php?error_message=".$error_message);
-//    exit();
-//}
-//
-//if (empty($_POST['email'])) {
-//    $valid = 0;
-//    $error_message .= 'Email address can not be empty';
-//    header("location: index.php?error_message=".$error_message);
-//    exit();
-//} else {
-//    if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
-//        $valid = 0;
-//        $error_message .= 'Email address is invalid';
-//        header("location: index.php?error_message=".$error_message);
-//        exit();
-//    }
-//}
-//if (empty($_POST['phone'])) {
-//    $valid = 0;
-//    $error_message .= "Phone field can not be empty";
-//    header("location: index.php?error_message=".$error_message);
-//    exit();
-//}
-//
-//if (empty($_POST['msg'])) {
-//    $valid = 0;
-//    $error_message .= "You Should Write a Message";
-//    header("location: index.php?error_message=".$error_message);
-//    exit();
-//}
-//
-//
-//if ($valid == 1) {
-//
-//    // saving into the database
-//    $statement = $pdo->prepare("INSERT INTO clients(name,email,phone,msg) VALUES (?,?,?,?)");
-//    $statement->execute(array($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['msg'] ));
-//
-//    unset($_POST['name']);
-//    unset($_POST['email']);
-//    unset($_POST['phone']);
-//    unset($_POST['msg']);
-//    $success_message = 'Thank You For Contacting Us.';
-//
-//
-//
-//}
-//?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -241,29 +190,29 @@
     </div>
     <div class="contact-section">
         <div class="container">
-            <form action="index.php" method="post">
+            <form action="db/contact.php" method="post">
                 <div class="row">
                     <div class="col-md-6 form-line">
                         <div class="form-group">
                             <label for="name">Your name</label>
-                            <input type="text" name="name" class="form-control" id="" placeholder=" Enter Name">
+                            <input type="text" name="name" class="form-control" id="" placeholder=" Enter Name" required="required">
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" name="email" class="form-control" id="email" placeholder=" Enter Email id" >
+                            <input type="email" name="email" class="form-control" id="email" placeholder=" Enter Email id" required="required">
                         </div>
                         <div class="form-group">
                             <label for="phone">Mobile No.</label>
-                            <input type="tel" name="phone" class="form-control" id="phone" placeholder=" Enter 10-digit mobile no." >
+                            <input type="tel" name="phone" class="form-control" id="phone" placeholder=" Enter 10-digit mobile no." required="required" >
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for ="msg"> Message</label>
-                            <textarea  class="form-control" name="msg" id="msg" placeholder="Enter Your Message"></textarea>
+                            <textarea  class="form-control" name="msg" id="msg" placeholder="Enter Your Message" required="required"></textarea>
                         </div>
                         <div>
-                            <button type="submit" name="submit" class="btn btn-default submit" id="register"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+                            <button type="submit" name="submit" class="btn btn-default submit" id="register" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
                         </div>
 
                     </div>
@@ -322,37 +271,28 @@
 </section>
 <!-- ./Footer -->
 
-<!--Modal-->
-<!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">-->
-<!--    <div class="modal-dialog modal-dialog-centered" role="document">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                    <span aria-hidden="true">&times;</span>-->
-<!--                </button>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                --><?php
-//                $error_message = '';
-//                if(isset($_GET['error_message'])){
-//                    $error_message = $_GET['error_message'];
-//                }
-//                if ($error_message): ?>
-<!--                    <h2 class="text-danger">--><?php //echo $error_message ?><!--</h2>-->
-<!--                --><?php //else: ?>
-<!--                    <p class="text-success">Thank You For Contacting with Us. We Will contact With You very Soon</p>-->
-<!--                --><?php //endif ?>
-<!--            </div>-->
-<!--            <div class="modal-footer">-->
-<!--                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-<!--                <button type="button" class="btn btn-primary">Save changes</button>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+<!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          
+        <div class="modal-body">
+          <?php if ($success_message): ?>
+            <h1 class="text-center text-success"><b>Thank You</b></h1>
+            <p>"Thank you for wanting our service,we will notify you all the information regarding this form within 2 hours via email"</p>
+          <?php else: ?>
+            <h1 class="text-center text-danger"><b>Oooops !!!</b></h1>
+            <p>Something Went Wrong. Please Try Again Later</p>
+          <?php endif ?>
+        </div>
 
 
-
+        <div class="modal-footer">
+          <button type="button" class="btn btn-learn" data-dismiss="modal">Okay</button>
+        </div>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -364,51 +304,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-<script type="text/javascript">
-    $(function(){
-        $('#register').click(function(e){
-            var valid = this.form.checkValidity();
-            if(valid){
-                var name 	= $('#name').val();
-                var email	= $('#email').val();
-                var phone 	= $('#phone').val();
-                var msg     = $('#msg').val();
 
-                e.preventDefault();
-                $.ajax({
-                    type: 'POST',
-                    url: 'db/contact.php',
-                    data: {name: name,phone: phone,email: email,msg: msg},
-                    success: function(data){
-                        Swal.fire({
-                            'title': 'Successful',
-                            'text': data,
-                            'type': 'success'
-                        })
-
-                    },
-                    error: function(data){
-                        Swal.fire({
-                            'title': 'Errors',
-                            'text': 'There were errors while saving the data.',
-                            'type': 'error'
-                        })
-                    }
-                });
-
-            }else{
-
-            }
-
-        });
-
-    });
-
-</script>
 
 <!-- My Customise JS -->
 <script src="js/main.js"></script>
+
+<script type="text/javascript">
+    var url = window.location.href;
+    if(url.indexOf('?success_message') != -1 || url.IndexOf('/error_message') != -1) {
+        $('#exampleModalCenter').modal('show');
+    }else{
+      $('#exampleModalCenter').modal('hide');
+    }
+  </script>
 </body>
 </html>
