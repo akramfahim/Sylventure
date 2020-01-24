@@ -196,7 +196,7 @@
         </div>
 
         <?php 
-          $statement = $pdo->prepare("SELECT * FROM `car_reservation`");
+          $statement = $pdo->prepare("SELECT * FROM `car_reservation` ORDER BY id DESC");
           $statement->execute();
           $clients = $statement->fetchAll(PDO::FETCH_ASSOC);
         ?>
@@ -208,12 +208,13 @@
             Contact Messages</div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <table class="table table-bordered" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>Car Type</th>
                     <th>Pickup Points</th>
                     <th>Pickup Date</th>
                     <th>Dropoff Points</th>
@@ -227,6 +228,7 @@
                     <td><?php echo $client['name'] ?></td>
                     <td><?php echo $client['email'] ?></td>
                     <td><?php echo $client['phone'] ?></td>
+                    <td><?php echo $client['carType'] ?></td>
                     <td><?php echo $client['pickup'] ?></td>
                     <td><?php echo $client['pickupDate'] ?></td>
                     <td><?php echo $client['dropoff'] ?></td>
