@@ -71,8 +71,8 @@
           <i class="fas fa-utensils"></i>
           <span>Restaurant Booking</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="doctor_booking.php">
+      <li class="nav-item active">
+        <a class="nav-link" href="doctor_booking.php">
           <i class="fas fa-user-md"></i>
           <span>Doctor Appointment</span></a>
       </li>
@@ -196,7 +196,7 @@
         </div>
 
         <?php 
-          $statement = $pdo->prepare("SELECT * FROM `doctor_reservation`");
+          $statement = $pdo->prepare("SELECT * FROM `doctor_reservation` ORDER BY id DESC");
           $statement->execute();
           $clients = $statement->fetchAll(PDO::FETCH_ASSOC);
         ?>
@@ -208,7 +208,7 @@
             Contact Messages</div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <table class="table table-bordered" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th>Name</th>
